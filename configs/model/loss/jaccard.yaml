@@ -1,0 +1,3 @@
+_target_: segmentation_models_pytorch.losses.JaccardLoss
+mode: binary
+from_logits: True

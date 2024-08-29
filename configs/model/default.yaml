@@ -1,0 +1,27 @@
+defaults:
+  - _self_
+  - net: unet.yaml
+  - loss: bce.yaml
+
+_target_: src.models.landslide_module.LandslideLitModule
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.001
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 10
+
+net:
+  # _target_: segmentation_models_pytorch.Unet
+  encoder_weights: Null
+  in_channels: 15
+  classes: 1
+# loss:
+#   _target_: segmentation_models_pytorch.losses.SoftBCEWithLogitsLoss

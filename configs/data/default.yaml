@@ -1,0 +1,14 @@
+_target_: src.data.landslides_datamodule.GlobalLandslideDataModule
+train_input_dir: ${paths.data_dir}/global_dataset/train_val/input
+train_label_dir: ${paths.data_dir}/global_dataset/train_val/label
+test_input_dir: ${paths.data_dir}/global_dataset/test/input
+test_label_dir: ${paths.data_dir}/global_dataset/test/label
+batch_size: 4
+num_workers: 16
+random_crop: 256
+random_flip: True
+normalize: True
+in_memory: True
+pin_memory: True
+train_val_split: 0.8
+samples_per_epoch: 1000

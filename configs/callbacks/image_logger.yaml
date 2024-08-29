@@ -1,0 +1,9 @@
+# https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.callbacks.RichProgressBar.html
+
+# Create a progress bar with rich text formatting.
+# Look at the above link for more detailed information.
+image_logger:
+  _target_: src.callbacks.imagelogger.ImageLogger
+  max_images: 4
+  val_batch_frequency: 1
+  test_batch_frequency: 1

@@ -1,0 +1,9 @@
+# @package _global_
+
+hydra:
+  mode: "MULTIRUN"
+  sweeper:
+    params:
+      model/net: glob(*)
+      model/loss: glob(*)
+      model.optimizer.lr: choice(0.001, 0.01)

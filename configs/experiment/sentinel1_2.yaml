@@ -1,0 +1,20 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=example
+
+defaults:
+  - override /trainer: gpu.yaml
+# all parameters below will be merged with parameters from default configurations set above
+# this allows you to overwrite only specified parameters
+
+tags: ["landslide"]
+
+seed: 42
+
+model:
+  net:
+    in_channels: 11
+
+data:
+  channels: [0, 1, 2, 3, 4, 5, 6, 7, 8, 13, 14]
